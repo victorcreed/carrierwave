@@ -176,7 +176,7 @@ module CarrierWave
         end
 
         def #{column}=(new_file)
-          new_file.kind_of(String) ? super(new_file)  : _mounter(:#{column}).cache(new_file)
+          new_file.is_a?(String) ? super(new_file)  : _mounter(:#{column}).cache(new_file)
         end
 
         def #{column}?
